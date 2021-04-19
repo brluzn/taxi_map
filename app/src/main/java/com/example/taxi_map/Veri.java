@@ -1,5 +1,16 @@
 package com.example.taxi_map;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+
 public class Veri {
 
     private int ID;
@@ -25,11 +36,7 @@ public class Veri {
     public Veri() {
     }
 
-    public Veri(int ID, int vendorID, String tpep_pickup_datetime, String tpep_dropoff_datetime,
-                int passenger_count, float trip_distance, int ratecodeID, String store_and_fwd_flag,
-                int PULocationID, int DOLocationID, int payment_type, int fare_amount, float extra,
-                float mta_tax, float tip_amount, float tolls_amount, float improvement_surcharge,
-                float total_amount, float congestion_surcharge) {
+    public Veri(int ID, int vendorID, String tpep_pickup_datetime, String tpep_dropoff_datetime, int passenger_count, float trip_distance, int ratecodeID, String store_and_fwd_flag, int PULocationID, int DOLocationID, int payment_type, int fare_amount, float extra, float mta_tax, float tip_amount, float tolls_amount, float improvement_surcharge, float total_amount, float congestion_surcharge) {
         this.ID = ID;
         VendorID = vendorID;
         this.tpep_pickup_datetime = tpep_pickup_datetime;
