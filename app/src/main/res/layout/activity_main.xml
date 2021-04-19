@@ -1,30 +1,244 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    >
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.SORGU"
+        android:textColor="#DD2222"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="26dp"
+        android:layout_marginBottom="7dp"/>
 
     <TextView
         android:id="@+id/textView_veri"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
-        android:text="VERİLER"
+        android:layout_width="371dp"
+        android:layout_height="45dp"
+        android:text="En uzun mesafeli 5 yolculuktaki gün ve mesafeleri listeleyiniz."
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="15dp"
+        />
 
     <Button
-        android:id="@+id/btn_sorgula"
+        android:id="@+id/btn_sorgu_bir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="254dp"
         android:text="sorgula"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+
+         />
+
+    <TableLayout
+        android:id="@+id/table"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@color/white"
+        android:visibility="invisible"
+        >
+
+        <TableRow android:background="#C2185B">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+
+                />
+        </TableRow>
+
+        <TableRow android:background="#BEF4FF81">
+
+            <TextView
+                android:id="@+id/r1c1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/r1c2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+        </TableRow>
+
+        <TableRow android:background="#BEF4FF81">
+
+            <TextView
+                android:id="@+id/r2c1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/r2c2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+        </TableRow>
+
+        <TableRow android:background="#BEF4FF81">
+
+            <TextView
+                android:id="@+id/r3c1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/r3c2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+        </TableRow>
+
+        <TableRow android:background="#BEF4FF81">
+
+            <TextView
+                android:id="@+id/r4c1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/r4c2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+        </TableRow>
+
+        <TableRow android:background="#BEF4FF81">
+
+            <TextView
+                android:id="@+id/r5c1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Tarih"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/r5c2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Mesafe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+
+                />
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F4EBEB"
+        android:text="2.SORGUYA GİT"
+        android:textColor="#D51010"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="end"
+
+        />
+
+
+</LinearLayout>
