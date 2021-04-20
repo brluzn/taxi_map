@@ -3,15 +3,20 @@ package com.example.taxi_map;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,17 +31,28 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class SecondActivity extends AppCompatActivity {
 
     private Date oneWayTripDate;
+    private Date date_s;
+
     FirebaseDatabase database=FirebaseDatabase.getInstance();
     DatabaseReference reference=database.getReference();
     ArrayList<Veri> want_dates=new ArrayList<>();
 
     Button btn_sorgula;
+    Button date_picker1;
+    Button date_picker2;
+    int start_day,last_day,start_month,last_month;
+
     TextView r1c1,r1c2,r1c3,r2c1,r2c2,r2c3,r3c1,r3c2,r3c3,r4c1,r4c2,r4c3,r5c1,r5c2,r5c3;
     ExtendedFloatingActionButton fab2;
+
+
+    DatePickerDialog datePickerDialog;
+
 
     TableLayout table;
     TableRow row1,row2,row3,row4,row5;
@@ -46,9 +62,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
 
-
-
-
+        date_picker1=findViewById(R.id.date_picker1);
         btn_sorgula=findViewById(R.id.btn_sorgula_iki);
         table=findViewById(R.id.table2);
         r1c1=findViewById(R.id.r1c1_2);
@@ -72,7 +86,33 @@ public class SecondActivity extends AppCompatActivity {
         row4=findViewById(R.id.tRow4);
         row5=findViewById(R.id.tRow5);
 
-        second_query();
+
+
+        date_picker1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                tarih_sec(date_picker1,start_day,start_month);
+
+                Log.e("SGun: "+start_day,"SAY:"+start_month);
+
+
+
+            }
+        });
+
+
+
+
+        //second_query();
+
+        btn_sorgula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                table.setVisibility(View.VISIBLE);
+            }
+        });
 
 
 
@@ -147,10 +187,6 @@ public class SecondActivity extends AppCompatActivity {
                         Toast.makeText(SecondActivity.this, "Secilen Tarihlerde Veri Bulunamadi", Toast.LENGTH_SHORT).show();
 
 
-
-
-
-
                 }
 
             }
@@ -191,6 +227,8 @@ public class SecondActivity extends AppCompatActivity {
 
         return bool;
     }
+
+
     class DistanceComparator implements Comparator<Veri> {
 
         // Function to compare
@@ -203,6 +241,33 @@ public class SecondActivity extends AppCompatActivity {
             else
                 return -1;
         }
+    }
+
+
+    public void tarih_sec(Button btn,int gun,int ay){
+
+        Calendar calendar=Calendar.getInstance();
+        calendar.set(Calendar.YEAR,2020);
+        calendar.set(Calendar.MONTH,Calendar.DECEMBER);
+
+        final int year=calendar.get(Calendar.YEAR);
+        final int month=calendar.get(Calendar.MONTH);
+        final int day=calendar.get(Calendar.DAY_OF_MONTH);
+
+        datePickerDialog=new DatePickerDialog(SecondActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                btn.setText(dayOfMonth+"-"+(month+1)+"-"+year);
+
+
+            }
+        },year,month,day);
+
+
+
+        datePickerDialog.show();
+
+
     }
 
 

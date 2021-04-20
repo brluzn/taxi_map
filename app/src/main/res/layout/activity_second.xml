@@ -30,6 +30,16 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/date_picker1"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="1.Tarih Seçiniz"
+        android:backgroundTint="#FFA000"
+        />
+
+    <Button
 
         android:id="@+id/btn_sorgula_iki"
         android:layout_width="wrap_content"
@@ -45,8 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:background="@color/white"
-        android:visibility="visible"
-        >
+        android:visibility="invisible">
 
         <TableRow android:background="#C2185B">
 
@@ -75,6 +84,7 @@
                 android:textStyle="bold"
 
                 />
+
             <TextView
 
                 android:layout_width="0dp"
@@ -329,7 +339,7 @@
         android:text="2.SORGUYA GİT"
         android:textColor="#D51010"
         android:textStyle="bold"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="end"
 
         />
