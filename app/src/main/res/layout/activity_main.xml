@@ -231,14 +231,14 @@
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
+
         android:backgroundTint="#F4EBEB"
         android:text="2.SORGUYA GİT"
         android:textColor="#D51010"
         android:textStyle="bold"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="end"
 
-        />
+        android:visibility="visible" />
 
 
 </LinearLayout>

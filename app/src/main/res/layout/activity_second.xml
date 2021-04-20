@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="15dp">
 
     <TextView
         android:id="@+id/textView4"
@@ -29,15 +30,38 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/date_picker1"
-        android:layout_marginLeft="10dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="1.Tarih Seçiniz"
-        android:backgroundTint="#FFA000"
-        />
+
+        android:orientation="horizontal"
+
+        >
+
+        <Button
+            android:id="@+id/date_picker1"
+            android:layout_margin="10dp"
+
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="1.Tarih Seçiniz"
+            android:backgroundTint="#FFA000"
+
+            />
+        <Button
+            android:id="@+id/date_picker2"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="2.Tarih Seçiniz"
+            android:backgroundTint="#FFA000"
+            />
+
+    </LinearLayout>
 
     <Button
 

@@ -54,6 +54,9 @@ public class SecondActivity extends AppCompatActivity {
     DatePickerDialog datePickerDialog;
 
 
+    Tarih sDate=new Tarih();
+    Tarih lDate=new Tarih();
+
     TableLayout table;
     TableRow row1,row2,row3,row4,row5;
     @Override
@@ -63,6 +66,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
         date_picker1=findViewById(R.id.date_picker1);
+        date_picker2=findViewById(R.id.date_picker2);
         btn_sorgula=findViewById(R.id.btn_sorgula_iki);
         table=findViewById(R.id.table2);
         r1c1=findViewById(R.id.r1c1_2);
@@ -92,25 +96,26 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                tarih_sec(date_picker1,start_day,start_month);
+                tarih_sec(date_picker1,sDate);
 
-                Log.e("SGun: "+start_day,"SAY:"+start_month);
-
-
-
+            }
+        });
+        date_picker2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tarih_sec(date_picker2,lDate);
             }
         });
 
 
-
-
-        //second_query();
 
         btn_sorgula.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 table.setVisibility(View.VISIBLE);
+                second_query(sDate,lDate);
+
             }
         });
 
@@ -120,7 +125,9 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-    private void second_query(){
+    private void second_query(Tarih sDay,Tarih lDay){
+
+
 
 
         ArrayList<Veri> dates=new ArrayList<>();
@@ -138,7 +145,7 @@ public class SecondActivity extends AppCompatActivity {
 
                 if(dates.size()>1){
                     for (Veri veri:dates){
-                        boolean bool=select_day(veri.getTpep_pickup_datetime(),12,1,15);
+                        boolean bool=select_day(veri.getTpep_pickup_datetime(),12,sDay.gun,lDay.gun);
                         if (bool){
                             want_dates.add(veri);
                         }
@@ -244,8 +251,10 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-    public void tarih_sec(Button btn,int gun,int ay){
+    public void tarih_sec(Button btn,Tarih c){
 
+        int d;
+        int m;
         Calendar calendar=Calendar.getInstance();
         calendar.set(Calendar.YEAR,2020);
         calendar.set(Calendar.MONTH,Calendar.DECEMBER);
@@ -254,15 +263,18 @@ public class SecondActivity extends AppCompatActivity {
         final int month=calendar.get(Calendar.MONTH);
         final int day=calendar.get(Calendar.DAY_OF_MONTH);
 
+
         datePickerDialog=new DatePickerDialog(SecondActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 btn.setText(dayOfMonth+"-"+(month+1)+"-"+year);
 
 
+                c.gun=dayOfMonth;
+                c.ay=month;
+
             }
         },year,month,day);
-
 
 
         datePickerDialog.show();
