@@ -1,372 +1,399 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SecondActivity"
-    android:orientation="vertical"
-    android:layout_margin="15dp">
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2.SORGU"
-        android:textColor="#DD2222"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="26dp"
-        android:layout_marginBottom="7dp"/>
-
-    <TextView
-        android:id="@+id/textView_veri"
-        android:layout_width="371dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="İki tarih arasında seyahat edilen en az mesafeli 5 yolculuk hangisidir? (tarihler secilebilmeli)"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        tools:context=".SecondActivity"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
 
-        android:orientation="horizontal"
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.SORGU"
+            android:textColor="#DD2222"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="26dp"
+            android:layout_marginBottom="7dp"/>
 
-        >
+        <TextView
+            android:id="@+id/textView_veri"
+            android:layout_width="371dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:text="İki tarih arasında seyahat edilen en az mesafeli 5 yolculuk hangisidir? (tarihler secilebilmeli)"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+
+            >
+
+            <Button
+                android:id="@+id/date_picker1"
+                android:layout_margin="10dp"
+
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="1.Tarih Seçiniz"
+                android:backgroundTint="#FFA000"
+
+                />
+            <Button
+                android:id="@+id/date_picker2"
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="2.Tarih Seçiniz"
+                android:backgroundTint="#FFA000"
+                />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/date_picker1"
-            android:layout_margin="10dp"
 
-            android:layout_width="0dp"
-            android:layout_weight="4"
+            android:id="@+id/btn_sorgula_iki"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="1.Tarih Seçiniz"
-            android:backgroundTint="#FFA000"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:text="sorgula"></Button>
 
-            />
-        <Button
-            android:id="@+id/date_picker2"
-            android:layout_margin="10dp"
-            android:layout_width="0dp"
-            android:layout_weight="4"
+        <TableLayout
+            android:id="@+id/table2"
+
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="2.Tarih Seçiniz"
-            android:backgroundTint="#FFA000"
-            />
+            android:background="@color/white"
+            android:visibility="invisible">
+
+            <TableRow android:background="#C2185B">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRow1"
+                android:background="#BEF4FF81"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/r1c1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r1c2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r1c3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRow2"
+                android:background="#BEF4FF81"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/r2c1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r2c2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r2c3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRow3"
+                android:background="#BEF4FF81"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/r3c1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r3c2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r3c3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRow4"
+                android:background="#BEF4FF81"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/r4c1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r4c2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r4c3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tRow5"
+                android:background="#BEF4FF81"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/r5c1_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Tarih"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r5c2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="Mesafe"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/r5c3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:gravity="center_horizontal"
+                    android:padding="10sp"
+                    android:text="ID"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            >
+            <Button
+                android:id="@+id/btn_sorgula_iki_tekrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:text="Tekrar Ara"
+                android:visibility="invisible">
+
+            </Button>
+
+            <Button
+                android:id="@+id/fab2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:backgroundTint="#F4EBEB"
+                android:text="2.SORGUYA GİT"
+                android:textColor="#D51010"
+                android:textSize="12sp"
+                android:textStyle="bold"
+
+
+
+                />
+        </LinearLayout>
+
 
     </LinearLayout>
-
-    <Button
-
-        android:id="@+id/btn_sorgula_iki"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15dp"
-        android:text="sorgula"></Button>
-
-    <TableLayout
-        android:id="@+id/table2"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:background="@color/white"
-        android:visibility="invisible">
-
-        <TableRow android:background="#C2185B">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-
-            <TextView
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRow1"
-            android:background="#BEF4FF81"
-            android:visibility="invisible">
-
-            <TextView
-                android:id="@+id/r1c1_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r1c2_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r1c3_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRow2"
-            android:background="#BEF4FF81"
-            android:visibility="invisible">
-
-            <TextView
-                android:id="@+id/r2c1_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r2c2_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r2c3_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRow3"
-            android:background="#BEF4FF81"
-            android:visibility="invisible">
-
-            <TextView
-                android:id="@+id/r3c1_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r3c2_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r3c3_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRow4"
-            android:background="#BEF4FF81"
-            android:visibility="invisible">
-
-            <TextView
-                android:id="@+id/r4c1_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r4c2_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r4c3_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tRow5"
-            android:background="#BEF4FF81"
-            android:visibility="invisible">
-
-            <TextView
-                android:id="@+id/r5c1_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Tarih"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r5c2_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="Mesafe"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-
-                />
-
-            <TextView
-                android:id="@+id/r5c3_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:gravity="center_horizontal"
-                android:padding="10sp"
-                android:text="ID"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-
-                />
-        </TableRow>
-    </TableLayout>
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fab2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F4EBEB"
-        android:text="2.SORGUYA GİT"
-        android:textColor="#D51010"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="end"
-
-        />
-
-
-</LinearLayout>
+</ScrollView>

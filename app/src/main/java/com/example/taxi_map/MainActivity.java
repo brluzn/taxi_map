@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn_sorgula;
     TextView r1c1,r1c2,r2c1,r2c2,r3c1,r3c2,r4c1,r4c2,r5c1,r5c2;
-    ExtendedFloatingActionButton fab1;
+    Button fab1;
 
 
     FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fab1=findViewById(R.id.fab1);
+        fab1.setVisibility(View.VISIBLE);
         TableLayout table;
 
         btn_sorgula=findViewById(R.id.btn_sorgu_bir);

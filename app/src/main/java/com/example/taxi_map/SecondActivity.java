@@ -45,10 +45,12 @@ public class SecondActivity extends AppCompatActivity {
     Button btn_sorgula;
     Button date_picker1;
     Button date_picker2;
+    Button fab2;
+    Button btn_sorgu_iki_yenile;
     int start_day,last_day,start_month,last_month;
 
     TextView r1c1,r1c2,r1c3,r2c1,r2c2,r2c3,r3c1,r3c2,r3c3,r4c1,r4c2,r4c3,r5c1,r5c2,r5c3;
-    ExtendedFloatingActionButton fab2;
+
 
 
     DatePickerDialog datePickerDialog;
@@ -68,6 +70,7 @@ public class SecondActivity extends AppCompatActivity {
         date_picker1=findViewById(R.id.date_picker1);
         date_picker2=findViewById(R.id.date_picker2);
         btn_sorgula=findViewById(R.id.btn_sorgula_iki);
+        btn_sorgu_iki_yenile=findViewById(R.id.btn_sorgula_iki_tekrar);
         table=findViewById(R.id.table2);
         r1c1=findViewById(R.id.r1c1_2);
         r1c2=findViewById(R.id.r1c2_2);
@@ -115,9 +118,21 @@ public class SecondActivity extends AppCompatActivity {
 
                 table.setVisibility(View.VISIBLE);
                 second_query(sDate,lDate);
+                btn_sorgu_iki_yenile.setVisibility(View.VISIBLE);
+                btn_sorgula.setVisibility(View.GONE);
 
             }
         });
+
+        btn_sorgu_iki_yenile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(getIntent());
+            }
+        });
+
+
 
 
 
@@ -153,31 +168,34 @@ public class SecondActivity extends AppCompatActivity {
 
                     Log.e("Size",":"+want_dates.size());
                     Collections.sort(want_dates, new DistanceComparator());
+                    Log.e("0"+want_dates.get(0).getTrip_distance(),"0"+want_dates.get(0).getTrip_distance());
+                    Log.e("1"+want_dates.get(1).getTrip_distance(),"0"+want_dates.get(1).getTrip_distance());
+                    Log.e("2"+want_dates.get(2).getTrip_distance(),"0"+want_dates.get(2).getTrip_distance());
                     int want_dates_size=want_dates.size();
 
 
                     if (want_dates_size>=1){
 
                         row1.setVisibility(View.VISIBLE);
-                        r1c1.setText(want_dates.get(want_dates_size-1).getTpep_pickup_datetime());
-                        r1c2.setText(String.valueOf(want_dates.get(want_dates_size-1).getTrip_distance()));
-                        r1c3.setText(String.valueOf(want_dates.get(want_dates_size-1).getID()));
+                        r1c1.setText(want_dates.get(0).getTpep_pickup_datetime());
+                        r1c2.setText(String.valueOf(want_dates.get(0).getTrip_distance()));
+                        r1c3.setText(String.valueOf(want_dates.get(0).getID()));
                         if(want_dates_size >=2){
                             row2.setVisibility(View.VISIBLE);
-                            r2c1.setText(want_dates.get(want_dates_size-2).getTpep_pickup_datetime());
-                            r2c2.setText(String.valueOf(want_dates.get(want_dates_size-2).getTrip_distance()));
-                            r2c3.setText(String.valueOf(want_dates.get(want_dates_size-2).getID()));
+                            r2c1.setText(want_dates.get(1).getTpep_pickup_datetime());
+                            r2c2.setText(String.valueOf(want_dates.get(1).getTrip_distance()));
+                            r2c3.setText(String.valueOf(want_dates.get(1).getID()));
 
                             if(want_dates_size>=3){
                                 row3.setVisibility(View.VISIBLE);
-                                r3c1.setText(want_dates.get(want_dates_size-3).getTpep_pickup_datetime());
-                                r3c2.setText(String.valueOf(want_dates.get(want_dates_size-3).getTrip_distance()));
-                                r3c3.setText(String.valueOf(want_dates.get(want_dates_size-3).getID()));
+                                r3c1.setText(want_dates.get(2).getTpep_pickup_datetime());
+                                r3c2.setText(String.valueOf(want_dates.get(2).getTrip_distance()));
+                                r3c3.setText(String.valueOf(want_dates.get(2).getID()));
                                 if(want_dates_size>=4){
                                     row4.setVisibility(View.VISIBLE);
-                                    r4c1.setText(want_dates.get(want_dates_size-4).getTpep_pickup_datetime());
-                                    r4c2.setText(String.valueOf(want_dates.get(want_dates_size-4).getTrip_distance()));
-                                    r4c3.setText(String.valueOf(want_dates.get(want_dates_size-4).getID()));
+                                    r4c1.setText(want_dates.get(3).getTpep_pickup_datetime());
+                                    r4c2.setText(String.valueOf(want_dates.get(3).getTrip_distance()));
+                                    r4c3.setText(String.valueOf(want_dates.get(3).getID()));
                                     if(want_dates_size>=5){
                                         row5.setVisibility(View.VISIBLE);
                                         r5c1.setText(want_dates.get(4).getTpep_pickup_datetime());
