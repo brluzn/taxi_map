@@ -23,10 +23,7 @@ London Taxi Data Link : https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data
 
 ## UI
 
-![b4ed54425e2e2874c7964a040bdd0c5f572221fc](https://user-images.githubusercontent.com/42109123/126912317-35eb3725-da22-43ad-bf1e-f9d4314e6cf0.gif)
-
-
-- Youtube : https://youtu.be/G4aECF3eB8E
+https://user-images.githubusercontent.com/42109123/126912938-3f2a000f-19c4-408c-b8b0-de521da4aa53.mp4
 
 
 
